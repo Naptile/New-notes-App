@@ -11,7 +11,7 @@ export default function Dashboard() {
 
   //  Fetch notes
   useEffect(() => {
-    fetch("http://localhost:5000/api/notes", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/notes`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -31,7 +31,7 @@ export default function Dashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:5000/api/notes", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/notes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
