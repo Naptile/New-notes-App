@@ -48,7 +48,7 @@ export default function Dashboard() {
 
   //  Delete note
   const deleteNote = async (id) => {
-    await fetch(`http://localhost:5000/api/notes/${id}`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/notes/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
