@@ -7,8 +7,10 @@ dotenv.config();
 connectDB();
 
 const app =express();
-
-app.use(cors());
+app.use(cors({
+  origin: "https://new-notes-app-beta.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 app.use("/api/auth",require("./Routes/authRoutes"))
 app.use("/api/notes",require("./Routes/notesRoutes"));
